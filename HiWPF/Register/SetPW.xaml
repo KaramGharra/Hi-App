@@ -1,0 +1,36 @@
+﻿<Window x:Class="HiWPF.Register.SetPW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HiWPF.Register"
+        mc:Ignorable="d"
+        Title="SetPW" Height="209.774" Width="339.474">
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FF233E87" Offset="0"/>
+            <GradientStop Color="#FF323E3D" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Grid.ColumnDefinitions>
+            <ColumnDefinition Width="114*"/>
+            <ColumnDefinition Width="217*"/>
+        </Grid.ColumnDefinitions>
+        <Grid.RowDefinitions>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="30*"/>
+            <RowDefinition Height="97*"/>
+        </Grid.RowDefinitions>
+        <Label x:Name="label" Content="Username" HorizontalAlignment="Left" VerticalAlignment="Top" Height="26" Width="77" Foreground="White"/>
+        <Label x:Name="label1" Content="Password" HorizontalAlignment="Left" Grid.Row="1" Width="63" Margin="0,0,0,2" Foreground="White"/>
+        <Label x:Name="label2" Content="Confirm Passowrd" HorizontalAlignment="Left" VerticalAlignment="Top" Grid.Row="2" Height="26" Width="114" Foreground="White"/>
+        <TextBox x:Name="UN" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,3,0,0" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <TextBox x:Name="PW" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,2,0,0" Grid.Row="1" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120" TextChanged="PW_TextChanged"/>
+        <TextBox x:Name="CP" Grid.Column="1" HorizontalAlignment="Left" Height="23" Margin="10,3,0,0" Grid.Row="2" TextWrapping="Wrap" Text="" VerticalAlignment="Top" Width="120"/>
+        <Button x:Name="btnReg" Content="Register" HorizontalAlignment="Left" Margin="10,41,0,0" Grid.Row="3" VerticalAlignment="Top" Width="94" Height="42" Click="btnReg_Click"/>
+        <Label x:Name="PWstat" Content="PWstatus" Grid.Column="1" HorizontalAlignment="Left" Grid.Row="3" VerticalAlignment="Top" Width="187" Foreground="Red"/>
+
+    </Grid>
+</Window>

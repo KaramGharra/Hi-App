@@ -1,0 +1,59 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HiWPF"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="HiWPF.UpdateProfile2"
+             mc:Ignorable="d" Height="441.935" Width="544.961">
+    <UserControl.Background>
+        <LinearGradientBrush EndPoint="0.471,1.274" MappingMode="RelativeToBoundingBox" StartPoint="0.539,-0.209">
+            <LinearGradientBrush.RelativeTransform>
+                <TransformGroup>
+                    <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                    <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                    <RotateTransform Angle="33.232" CenterY="0.5" CenterX="0.5"/>
+                    <TranslateTransform/>
+                </TransformGroup>
+            </LinearGradientBrush.RelativeTransform>
+            <GradientStop Color="#FF062736"/>
+            <GradientStop Color="#FF66A5F0" Offset="1"/>
+        </LinearGradientBrush>
+    </UserControl.Background>
+    <Canvas Margin="10" RenderTransformOrigin="0.535,0.502">
+        <Ellipse x:Name="PP" Height="140.5" Width="161.5" Canvas.Left="181.5" Canvas.Top="10" Stroke="White" MouseDown="PP_MouseDown">
+            <Ellipse.Fill>
+                <ImageBrush  ImageSource="https://cdn3.iconfinder.com/data/icons/interface-8/128/InterfaceExpendet-09-512.png"/>
+            </Ellipse.Fill>
+        </Ellipse>
+        <Label x:Name="lNN" Content="Nick Name" Canvas.Left="91.473" Canvas.Top="202.445" Foreground="White" FontFamily="Comic Sans MS" FontSize="16"/>
+        <Label x:Name="lFN" Content="First Name" Canvas.Left="91.473" Canvas.Top="234.742" Foreground="White" FontFamily="Comic Sans MS" FontSize="16"/>
+        <Label x:Name="lLN" Content="Last Name" Canvas.Left="91.473" Canvas.Top="267.039" Foreground="White" FontFamily="Comic Sans MS" FontSize="16"/>
+        <Label x:Name="lPN" Content="Phone Number" Canvas.Left="91.473" Canvas.Top="299.336" Foreground="White" FontFamily="Comic Sans MS" FontSize="16"/>
+        <TextBox x:Name="NN" Height="23" Canvas.Left="263" TextWrapping="Wrap" Text="" Canvas.Top="202.445" Width="170"/>
+        <TextBox x:Name="FN" Height="23" Canvas.Left="263" TextWrapping="Wrap" Text="" Canvas.Top="234.742" Width="170"/>
+        <TextBox x:Name="LN" Height="23" Canvas.Left="263" TextWrapping="Wrap" Text="" Canvas.Top="267.039" Width="170"/>
+        <TextBox x:Name="PN" Height="23" Canvas.Left="263" TextWrapping="Wrap" Text="" Canvas.Top="299.336" Width="170"/>
+        <Button x:Name="btnSave" Content="Save" Height="42.935" Canvas.Left="181.5" Canvas.Top="369" Width="161.5" Click="btnSave_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.471,1.274" MappingMode="RelativeToBoundingBox" StartPoint="0.539,-0.209">
+                    <LinearGradientBrush.RelativeTransform>
+                        <TransformGroup>
+                            <ScaleTransform CenterY="0.5" CenterX="0.5"/>
+                            <SkewTransform CenterY="0.5" CenterX="0.5"/>
+                            <RotateTransform Angle="33.232" CenterY="0.5" CenterX="0.5"/>
+                            <TranslateTransform/>
+                        </TransformGroup>
+                    </LinearGradientBrush.RelativeTransform>
+                    <GradientStop Color="#FF20A6E4"/>
+                    <GradientStop Color="#FF45477E" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+        <ed:Arc x:Name="R1" ArcThickness="0" ArcThicknessUnit="Pixel" EndAngle="180" Fill="#FFF4F4F5" Height="19.739" Stretch="None" Stroke="Black" StartAngle="0" Width="18.937" Canvas.Left="484.774" Canvas.Top="10"/>
+        <ed:Arc x:Name="R2" ArcThickness="0" ArcThicknessUnit="Pixel" EndAngle="360" Fill="#FFF4F4F5" Height="19.739" Stretch="None" Stroke="Black" StartAngle="180" Width="18.939" Canvas.Left="503.711" Canvas.Top="10"/>
+        <Button x:Name="btnExit" Content="" Width="22.129" Height="19.739" Background="{x:Null}" BorderBrush="#FF1B4C51" Foreground="{x:Null}" Click="btnExit_Click" Canvas.Left="492.832" Canvas.Top="10"/>
+
+    </Canvas>
+</UserControl>

@@ -1,0 +1,5 @@
+C:\Users\karam\Desktop\Source_6\WinSound\WinSound\bin\Debug\WinSound.dll
+C:\Users\karam\Desktop\Source_6\WinSound\WinSound\bin\Debug\WinSound.pdb
+C:\Users\karam\Desktop\Source_6\WinSound\WinSound\obj\Debug\WinSound.csprojResolveAssemblyReference.cache
+C:\Users\karam\Desktop\Source_6\WinSound\WinSound\obj\Debug\WinSound.dll
+C:\Users\karam\Desktop\Source_6\WinSound\WinSound\obj\Debug\WinSound.pdb

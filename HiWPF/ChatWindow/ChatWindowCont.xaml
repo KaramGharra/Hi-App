@@ -1,0 +1,49 @@
+﻿<UserControl x:Class="HiWPF.ChatWindow1"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HiWPF"
+             mc:Ignorable="d" Width="500" Height="760">
+    <Grid>
+        <Grid.Background>
+            <ImageBrush ImageSource="CW.JPG.JPG"/>
+        </Grid.Background>
+        <Canvas Name="ChatHeader" Height="79" VerticalAlignment="Top" Margin="0,0,0,0">
+            <Canvas.Background>
+                <LinearGradientBrush EndPoint="-0.094,0.394" MappingMode="RelativeToBoundingBox" StartPoint="1.044,0.377">
+                    <GradientStop Color="#FF151919" Offset="0.015"/>
+                    <GradientStop Color="#FF00B9FF" Offset="1"/>
+                    <GradientStop Color="#FF634A8D" Offset="0.985"/>
+                    <GradientStop Color="#5B000000" Offset="0.988"/>
+                    <GradientStop Color="#5BC4C7C3"/>
+                    <GradientStop Color="#FF4A6BC5" Offset="1"/>
+                    <GradientStop Color="#FF3867CB" Offset="0.903"/>
+                </LinearGradientBrush>
+            </Canvas.Background>
+            <Label x:Name="UNGN" Content="Username/Group Name" Canvas.Left="89.999" Canvas.Top="10" FontFamily="Comic Sans MS" FontSize="20" Height="38.333"/>
+            <Label x:Name="Participants" Content="Participants" Canvas.Left="95.999" Canvas.Top="48.333" FontFamily="Comic Sans MS" FontSize="14"/>
+            <Label x:Name="Creator" Content="Creator" Canvas.Left="95.999" Canvas.Top="48.333" FontFamily="Comic Sans MS" FontSize="14" Visibility="Hidden"/>
+            <Image x:Name="Close" Height="28" Canvas.Left="468.667" Width="31.333" Source="C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\HiWPF\pics\X60.png" MouseDown="Close_MouseDown"/>
+            <Image x:Name="Attachment" Height="45" Canvas.Left="426" Canvas.Top="24" Width="57" Source="C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\HiWPF\pics\020_192_attach_attachment_paper_clip-512.png" MouseDown="Attachment_MouseDown"/>
+            <Image x:Name="VoiceCall" Height="59" Canvas.Left="362" Width="64" Source="C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\HiWPF\pics\call.png" MouseDown="VoiceCall_MouseDown" Canvas.Top="10"/>
+            <Image x:Name="VideoCall" Height="42" Width="46" Canvas.Left="316" Canvas.Top="27" Source="https://cdn4.iconfinder.com/data/icons/unigrid-devices/61/017_cam_camera_video_record-256.png" MouseDown="VideoCall_MouseDown"/>
+            <Image x:Name="PP" Height="82.824" Canvas.Left="2.667" Width="93.332" Source="C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\HiWPF\pics\InterfaceExpendet-09-512.png" OpacityMask="Black"/>
+        </Canvas>
+        <Canvas Height="79" Margin="-25,625,10,0" VerticalAlignment="Top">
+            <Border BorderBrush="Gray" BorderThickness="2" CornerRadius="15,15,15,15" Canvas.Left="29" Canvas.Top="10" Width="425" Background="White">
+                <TextBox x:Name="MSG" Margin="25,0,18.5,0" BorderThickness="0" Height="46.46" VerticalAlignment="Bottom" TextChanged="MSG_TextChanged" KeyUp="MSG_KeyDown" ScrollViewer.VerticalScrollBarVisibility="Auto" Focusable="True"/>
+            </Border>
+            <Image x:Name="SendMessage" Height="75" Canvas.Left="445" Width="91" Source="C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\HiWPF\pics\sendMSGs.png" Cursor="Hand" ToolTip="Send Message" MouseDown="SendMessage_MouseDown" Visibility="Visible"/>
+
+
+
+
+
+
+        </Canvas>
+        <ScrollViewer Margin="-22,89,0,135" CanContentScroll="True" VerticalScrollBarVisibility="Hidden">
+            <StackPanel Name="MSGS" />
+        </ScrollViewer>
+    </Grid>
+</UserControl>

@@ -1,0 +1,17 @@
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\bin\Debug\WPFDemo.exe.config
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\bin\Debug\WPFDemo.exe.manifest
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\bin\Debug\WPFDemo.application
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\bin\Debug\WPFDemo.exe
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\bin\Debug\WPFDemo.pdb
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\Window1.baml
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\Window1.g.cs
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\App.g.cs
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFDemo_MarkupCompile.cache
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFDemo.g.resources
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFDemo.Properties.Resources.resources
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFVid.csproj.GenerateResource.Cache
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFDemo.exe.manifest
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFDemo.application
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFDemo.exe
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFDemo.pdb
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\WPFVid\obj\Debug\WPFVid.csprojResolveAssemblyReference.cache

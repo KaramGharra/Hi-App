@@ -1,0 +1,21 @@
+﻿<Window x:Class="HiWPF.VoiceCall.VoiceRoom"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HiWPF.VoiceCall"
+        mc:Ignorable="d"
+        Title="VoiceRoom" Height="92" Width="328"  >
+    <Window.Background>
+        <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+            <GradientStop Color="#FFC1C1C1" Offset="0"/>
+            <GradientStop Color="#FF1F5063" Offset="1"/>
+        </LinearGradientBrush>
+    </Window.Background>
+    <Grid>
+        <Button x:Name="LeaveBTN" Content="Leave" HorizontalAlignment="Left" Margin="10,10,0,0" VerticalAlignment="Top" Width="75" Height="41" />
+        <Button x:Name="StartTalkingBTN" Content="Talk" HorizontalAlignment="Left" Margin="118,10,0,0" VerticalAlignment="Top" Width="75" Height="41" Click="StartTalkingBTN_Click"/>
+        <Button x:Name="StopTalkingBTN" Content="Stop Talking" HorizontalAlignment="Left" Margin="229,10,0,0" VerticalAlignment="Top" Width="75" Height="41" />
+
+    </Grid>
+</Window>

@@ -1,0 +1,485 @@
+﻿<?xml version="1.0" encoding="utf-8"?>
+<Project ToolsVersion="14.0" DefaultTargets="Build" xmlns="http://schemas.microsoft.com/developer/msbuild/2003">
+  <Import Project="$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props" Condition="Exists('$(MSBuildExtensionsPath)\$(MSBuildToolsVersion)\Microsoft.Common.props')" />
+  <PropertyGroup>
+    <Configuration Condition=" '$(Configuration)' == '' ">Debug</Configuration>
+    <Platform Condition=" '$(Platform)' == '' ">AnyCPU</Platform>
+    <ProjectGuid>{6077DB1B-FA42-47F5-A819-EF35D1073B27}</ProjectGuid>
+    <OutputType>WinExe</OutputType>
+    <AppDesignerFolder>Properties</AppDesignerFolder>
+    <RootNamespace>HiWPF</RootNamespace>
+    <AssemblyName>HiWPF</AssemblyName>
+    <TargetFrameworkVersion>v4.5.2</TargetFrameworkVersion>
+    <FileAlignment>512</FileAlignment>
+    <ProjectTypeGuids>{60dc8134-eba5-43b8-bcc9-bb4bc16c2548};{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}</ProjectTypeGuids>
+    <WarningLevel>4</WarningLevel>
+    <AutoGenerateBindingRedirects>true</AutoGenerateBindingRedirects>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Debug|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugSymbols>true</DebugSymbols>
+    <DebugType>full</DebugType>
+    <Optimize>false</Optimize>
+    <OutputPath>bin\Debug\</OutputPath>
+    <DefineConstants>DEBUG;TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <PropertyGroup Condition=" '$(Configuration)|$(Platform)' == 'Release|AnyCPU' ">
+    <PlatformTarget>AnyCPU</PlatformTarget>
+    <DebugType>pdbonly</DebugType>
+    <Optimize>true</Optimize>
+    <OutputPath>bin\Release\</OutputPath>
+    <DefineConstants>TRACE</DefineConstants>
+    <ErrorReport>prompt</ErrorReport>
+    <WarningLevel>4</WarningLevel>
+  </PropertyGroup>
+  <ItemGroup>
+    <Reference Include="iConfClient.NET, Version=1.6.0.5019, Culture=neutral, PublicKeyToken=4300bc540bfb680e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WPFVid\bin\Debug\iConfClient.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="iConfServer.NET, Version=1.6.0.5019, Culture=neutral, PublicKeyToken=4300bc540bfb680e, processorArchitecture=x86">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>..\WPFVid\bin\Debug\iConfServer.NET.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.DirectX.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.DirectX.DirectSound, Version=1.0.2902.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35">
+      <SpecificVersion>False</SpecificVersion>
+      <HintPath>.\Microsoft.DirectX.DirectSound.dll</HintPath>
+    </Reference>
+    <Reference Include="Microsoft.Expression.Drawing, Version=4.5.0.0, Culture=neutral, PublicKeyToken=31bf3856ad364e35, processorArchitecture=MSIL">
+      <HintPath>..\packages\Microsoft.Expression.Drawing.3.0.0\lib\net45\Microsoft.Expression.Drawing.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="NAudio, Version=1.8.0.0, Culture=neutral, processorArchitecture=MSIL">
+      <HintPath>..\packages\NAudio.1.8.0\lib\net35\NAudio.dll</HintPath>
+      <Private>True</Private>
+    </Reference>
+    <Reference Include="System" />
+    <Reference Include="System.Data" />
+    <Reference Include="System.Drawing" />
+    <Reference Include="System.EnterpriseServices" />
+    <Reference Include="System.Web.Services" />
+    <Reference Include="System.Windows.Forms" />
+    <Reference Include="System.Xml" />
+    <Reference Include="Microsoft.CSharp" />
+    <Reference Include="System.Core" />
+    <Reference Include="System.Xml.Linq" />
+    <Reference Include="System.Data.DataSetExtensions" />
+    <Reference Include="System.Net.Http" />
+    <Reference Include="System.Xaml">
+      <RequiredTargetFramework>4.0</RequiredTargetFramework>
+    </Reference>
+    <Reference Include="WindowsBase" />
+    <Reference Include="PresentationCore" />
+    <Reference Include="PresentationFramework" />
+    <Reference Include="WindowsFormsIntegration" />
+  </ItemGroup>
+  <ItemGroup>
+    <ApplicationDefinition Include="App.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </ApplicationDefinition>
+    <Compile Include="AddContact\AddContact.xaml.cs">
+      <DependentUpon>AddContact.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddContact\AddContactW.xaml.cs">
+      <DependentUpon>AddContactW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddGroup\CreateGroup.xaml.cs">
+      <DependentUpon>CreateGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AddGroup\CreateGroupW.xaml.cs">
+      <DependentUpon>CreateGroupW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="AudioStreamer.cs" />
+    <Compile Include="ChatWindow\ChatWindowCont.xaml.cs">
+      <DependentUpon>ChatWindowCont.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatWindow\SenderVoiceInvitation.xaml.cs">
+      <DependentUpon>SenderVoiceInvitation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatWindow\VoiceInvitation.xaml.cs">
+      <DependentUpon>VoiceInvitation.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Classes\Chats.cs" />
+    <Compile Include="Classes\Getters.cs" />
+    <Compile Include="Classes\GroupInfo.cs" />
+    <Compile Include="Classes\GroupParticipant.cs" />
+    <Compile Include="Classes\Messages.cs" />
+    <Compile Include="Classes\Profile.cs" />
+    <Compile Include="Classes\SingletonChats.cs" />
+    <Compile Include="Classes\SingletonUser.cs" />
+    <Compile Include="Classes\Users.cs" />
+    <Compile Include="ContactGroupSearch\GCSW.xaml.cs">
+      <DependentUpon>GCSW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRows\ContactRow.xaml.cs">
+      <DependentUpon>ContactRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRows\ContactRowForAddGroup.xaml.cs">
+      <DependentUpon>ContactRowForAddGroup.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRows\GroupNotificationMSG.xaml.cs">
+      <DependentUpon>GroupNotificationMSG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRows\GroupRow.xaml.cs">
+      <DependentUpon>GroupRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRows\NotificationMSG.xaml.cs">
+      <DependentUpon>NotificationMSG.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRows\SearchGroupRow.xaml.cs">
+      <DependentUpon>SearchGroupRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ContactGroupSearch\GroupContactSearch.xaml.cs">
+      <DependentUpon>GroupContactSearch.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="DownloadsW.xaml.cs">
+      <DependentUpon>DownloadsW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileRow.xaml.cs">
+      <DependentUpon>FileRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="FileSharing.xaml.cs">
+      <DependentUpon>FileSharing.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\MainSc.xaml.cs">
+      <DependentUpon>MainSc.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="MainScreen\MainScW.xaml.cs">
+      <DependentUpon>MainScW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatWindow\MyMessages.xaml.cs">
+      <DependentUpon>MyMessages.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="ChatWindow\NewMsgs.xaml.cs">
+      <DependentUpon>NewMsgs.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="CustomRows\SearchContactRow.xaml.cs">
+      <DependentUpon>SearchContactRow.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register\Register.xaml.cs">
+      <DependentUpon>Register.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Register\SetPW.xaml.cs">
+      <DependentUpon>SetPW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TCPStreamerControl.xaml.cs">
+      <DependentUpon>TCPStreamerControl.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="TCPTest.xaml.cs">
+      <DependentUpon>TCPTest.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProf\UpdateProfile2.xaml.cs">
+      <DependentUpon>UpdateProfile2.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="UpdateProf\UpdateProfileW.xaml.cs">
+      <DependentUpon>UpdateProfileW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VideoW.xaml.cs">
+      <DependentUpon>VideoW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceCall\ServerW.xaml.cs">
+      <DependentUpon>ServerW.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="VoiceCall\SocketCoderBinaryServer.cs" />
+    <Compile Include="VoiceCall\VoiceRoom.xaml.cs">
+      <DependentUpon>VoiceRoom.xaml</DependentUpon>
+    </Compile>
+    <Compile Include="Web References\WS\Reference.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Reference.map</DependentUpon>
+    </Compile>
+    <Page Include="AddContact\AddContact.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddContact\AddContactW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddGroup\CreateGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="AddGroup\CreateGroupW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatWindow\ChatWindowCont.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatWindow\SenderVoiceInvitation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatWindow\VoiceInvitation.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContactGroupSearch\GCSW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomRows\ContactRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomRows\ContactRowForAddGroup.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomRows\GroupNotificationMSG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomRows\GroupRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomRows\NotificationMSG.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomRows\SearchGroupRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ContactGroupSearch\GroupContactSearch.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="DownloadsW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="FileSharing.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Login.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Compile Include="App.xaml.cs">
+      <DependentUpon>App.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Login.xaml.cs">
+      <DependentUpon>Login.xaml</DependentUpon>
+      <SubType>Code</SubType>
+    </Compile>
+    <Page Include="MainScreen\MainSc.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="MainScreen\MainScW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatWindow\MyMessages.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="ChatWindow\NewMsgs.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="CustomRows\SearchContactRow.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register\Register.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Register\SetPW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="Simple Styles.xaml">
+      <Generator>MSBuild:Compile</Generator>
+      <SubType>Designer</SubType>
+    </Page>
+    <Page Include="TCPStreamerControl.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="TCPTest.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateProf\UpdateProfile2.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="UpdateProf\UpdateProfileW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VideoW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VoiceCall\ServerW.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+    <Page Include="VoiceCall\VoiceRoom.xaml">
+      <SubType>Designer</SubType>
+      <Generator>MSBuild:Compile</Generator>
+    </Page>
+  </ItemGroup>
+  <ItemGroup>
+    <Compile Include="Properties\AssemblyInfo.cs">
+      <SubType>Code</SubType>
+    </Compile>
+    <Compile Include="Properties\Resources.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DesignTime>True</DesignTime>
+      <DependentUpon>Resources.resx</DependentUpon>
+    </Compile>
+    <Compile Include="Properties\Settings.Designer.cs">
+      <AutoGen>True</AutoGen>
+      <DependentUpon>Settings.settings</DependentUpon>
+      <DesignTimeSharedInput>True</DesignTimeSharedInput>
+    </Compile>
+    <EmbeddedResource Include="Properties\Resources.resx">
+      <Generator>ResXFileCodeGenerator</Generator>
+      <LastGenOutput>Resources.Designer.cs</LastGenOutput>
+    </EmbeddedResource>
+    <None Include="packages.config" />
+    <None Include="Properties\Settings.settings">
+      <Generator>SettingsSingleFileGenerator</Generator>
+      <LastGenOutput>Settings.Designer.cs</LastGenOutput>
+    </None>
+    <AppDesigner Include="Properties\" />
+    <None Include="Web References\WS\Files.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS\GroupInfo.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS\Invitation.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS\Messages.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS\Profile.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS\Reference.map">
+      <Generator>MSDiscoCodeGenerator</Generator>
+      <LastGenOutput>Reference.cs</LastGenOutput>
+    </None>
+    <None Include="Web References\WS\Users.datasource">
+      <DependentUpon>Reference.map</DependentUpon>
+    </None>
+    <None Include="Web References\WS\Webservice1.wsdl" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="App.config" />
+  </ItemGroup>
+  <ItemGroup>
+    <WCFMetadata Include="Service References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferences Include="Web References\" />
+  </ItemGroup>
+  <ItemGroup>
+    <WebReferenceUrl Include="http://54.68.48.87/Webservice1.asmx">
+      <UrlBehavior>Dynamic</UrlBehavior>
+      <RelPath>Web References\WS\</RelPath>
+      <UpdateFromURL>http://54.68.48.87/Webservice1.asmx</UpdateFromURL>
+      <ServiceLocationURL>
+      </ServiceLocationURL>
+      <CachedDynamicPropName>
+      </CachedDynamicPropName>
+      <CachedAppSettingsObjectName>Settings</CachedAppSettingsObjectName>
+      <CachedSettingsPropName>HiWPF_WS_WebService1</CachedSettingsPropName>
+    </WebReferenceUrl>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Web References\WS\Webservice1.disco" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\020_192_attach_attachment_paper_clip-60.png" />
+    <Resource Include="pics\12.png" />
+    <Resource Include="pics\AddGroup.png" />
+    <Resource Include="pics\call.png" />
+    <Resource Include="pics\CW.JPG.JPG" />
+    <Resource Include="pics\las.png" />
+    <Resource Include="pics\ras.png" />
+    <Resource Include="pics\search.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\ra.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\la.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\InterfaceExpendet-09-512 new.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="ChatWindow\CW.JPG.JPG" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\sendMSGs.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\ghost3-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\020_192_attach_attachment_paper_clip-512.png" />
+    <Resource Include="pics\X60.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <Resource Include="pics\InterfaceExpendet-09-512.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <ProjectReference Include="..\Peer-to-peer Conference System\Conference System.csproj">
+      <Project>{DC4B43CB-8EB4-4266-9FDB-F0193727A6BB}</Project>
+      <Name>Conference System</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source_6\TCPClient\TCPClient\TCPClient.csproj">
+      <Project>{03c005a4-61ac-40de-a95e-79335d9e39ba}</Project>
+      <Name>TCPClient</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source_6\TCPServer\TCPServer\TCPServer.csproj">
+      <Project>{56f75391-6af2-4418-8b8c-c8971d641695}</Project>
+      <Name>TCPServer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source_6\TCPStreamer\TCPStreamer\TCPStreamer.csproj">
+      <Project>{5867f540-7c90-4f18-8b0a-4ef78d4fffb9}</Project>
+      <Name>TCPStreamer</Name>
+    </ProjectReference>
+    <ProjectReference Include="..\Source_6\WinSound\WinSound\WinSound.csproj">
+      <Project>{28120d29-4f6e-4c3b-ab6a-900a26420b9c}</Project>
+      <Name>WinSound</Name>
+    </ProjectReference>
+  </ItemGroup>
+  <ItemGroup>
+    <Folder Include="FileSharingContent\" />
+  </ItemGroup>
+  <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
+  <!-- To modify your build process, add your task inside one of the targets below and uncomment it. 
+       Other similar extension points exist, see Microsoft.Common.targets.
+  <Target Name="BeforeBuild">
+  </Target>
+  <Target Name="AfterBuild">
+  </Target>
+  -->
+</Project>

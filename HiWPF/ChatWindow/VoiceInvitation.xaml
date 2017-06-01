@@ -1,0 +1,40 @@
+﻿<Window x:Class="HiWPF.ChatWindow.VoiceInvitation"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HiWPF.ChatWindow"
+        mc:Ignorable="d"
+        Title="VoiceInvitation" Height="184.5" Width="291.5">
+    <Grid Margin="0,0,-8,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="-0.094,0.394" MappingMode="RelativeToBoundingBox" StartPoint="1.044,0.377">
+                <GradientStop Color="#FF151919" Offset="0.015"/>
+                <GradientStop Color="#FF00B9FF" Offset="1"/>
+                <GradientStop Color="#FF634A8D" Offset="0.985"/>
+                <GradientStop Color="#5B000000" Offset="0.988"/>
+                <GradientStop Color="#5BC4C7C3"/>
+                <GradientStop Color="#FF4A6BC5" Offset="1"/>
+                <GradientStop Color="#FF3867CB" Offset="0.903"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <Label x:Name="Req" Content="Contact has invited you to a voice chat" HorizontalAlignment="Left" Margin="34,28.5,0,0" VerticalAlignment="Top" Width="222.493" Foreground="White"/>
+        <Button x:Name="btnAccept" Content="Accept" HorizontalAlignment="Left" Height="45" Margin="34,78,0,0" VerticalAlignment="Top" Width="95.5" Click="btnAccept_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF929EA0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+        <Button x:Name="btnDecline" Content="Decline" HorizontalAlignment="Left" Height="45" Margin="160.993,78,0,0" VerticalAlignment="Top" Width="95.5" Click="btnDecline_Click">
+            <Button.Background>
+                <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                    <GradientStop Color="#FF929EA0" Offset="0"/>
+                    <GradientStop Color="White" Offset="1"/>
+                </LinearGradientBrush>
+            </Button.Background>
+        </Button>
+
+    </Grid>
+</Window>

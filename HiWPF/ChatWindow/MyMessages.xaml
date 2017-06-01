@@ -1,0 +1,21 @@
+﻿<UserControl
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HiWPF"
+             xmlns:ed="http://schemas.microsoft.com/expression/2010/drawing" x:Class="HiWPF.MyMessages"
+             mc:Ignorable="d" >
+    <Border BorderBrush="White" BorderThickness="2" CornerRadius="15,15,15,15" Canvas.Left="80" Canvas.Top="10"  Margin="0,0,-24.427,0" OpacityMask="White" Opacity="0.8" Height="Auto" MaxWidth="590">
+        <Border.Background>
+            <LinearGradientBrush EndPoint="1.176,0.484" StartPoint="-0.407,0.571">
+                <GradientStop Color="Black"/>
+                <GradientStop Color="#FF7AC95C" Offset="0.474"/>
+            </LinearGradientBrush>
+        </Border.Background>
+        <StackPanel Orientation="Vertical">
+            <TextBlock Name="MSG" Text="Test" Margin="10,5,15,5" FontFamily="Comic Sans MS" FontSize="16" HorizontalAlignment="Left" MaxWidth="590" Height="Auto" Width="Auto" TextWrapping="Wrap"/>
+        </StackPanel>
+    </Border>
+</UserControl>
+

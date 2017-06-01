@@ -1,0 +1,17 @@
+﻿<UserControl x:Class="HiWPF.TCPTest"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:wf="clr-namespace:TCPStreamer;assembly=TCPStreamer"
+             xmlns:local="clr-namespace:HiWPF"
+             mc:Ignorable="d" Height="765" Width="792">
+    <Grid Name="grid1">
+        <WindowsFormsHost Name ="idk" HorizontalAlignment="Left" Height="769" Margin="10,0,0,0" VerticalAlignment="Top" Width="784" >
+            <WindowsFormsHost.Child>
+                <wf:TCPSControl Name="TCPSinWPF"/>
+            </WindowsFormsHost.Child>
+        </WindowsFormsHost>
+
+    </Grid>
+</UserControl>

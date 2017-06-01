@@ -1,0 +1,14 @@
+﻿<Window x:Class="HiWPF.MainScW"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HiWPF"
+        xmlns:wf="clr-namespace:TCPStreamer;assembly=TCPStreamer"  
+        mc:Ignorable="d"
+        Title="MainScW" Height="740" Width="1370" ResizeMode="CanMinimize" WindowState="Maximized" WindowStartupLocation="Manual" Closed="DeleteIP" Loaded="Window_Loaded" >
+    <Grid  Height="730" VerticalAlignment="Top" HorizontalAlignment="Right" Width="1654" Margin="0,0,0,-19">
+        <local:MainSc Margin="288,0,0,-10" HorizontalAlignment="Left" Width="1366" Height="740" VerticalAlignment="Top"/>
+    </Grid>
+
+</Window>

@@ -1,0 +1,13 @@
+﻿<UserControl x:Class="HiWPF.CustomRows.ContactRowForAddGroup"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HiWPF.CustomRows"
+             mc:Ignorable="d" d:DesignWidth="273.506" Height="95.065" BorderBrush="White">
+    <Grid>
+        <CheckBox x:Name="Chosen" Content="&#xD;&#xA;" HorizontalAlignment="Left" Margin="24.026,39.739,0,40.226" Width="16.859"/>
+        <Image x:Name="PP" Margin="45.885,10,0,10" HorizontalAlignment="Left" Width="78.961" Source="https://cdn3.iconfinder.com/data/icons/interface-8/128/InterfaceExpendet-09-128.png" />
+        <Label x:Name="CN" Content="Contact Name" HorizontalAlignment="Right" Margin="0,32.206,25.219,29.886" Width="123.441" FontFamily="Comic Sans MS" FontSize="16" Background="{x:Null}" Foreground="White"/>
+    </Grid>
+</UserControl>

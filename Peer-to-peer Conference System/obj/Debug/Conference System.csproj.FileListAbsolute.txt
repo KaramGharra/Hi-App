@@ -1,0 +1,14 @@
+C:\Users\karam\Desktop\video_voice_conferencing\Video_Voice_Conferencing\Peer-to-peer Conference System\bin\Debug\Conference System.exe
+C:\Users\karam\Desktop\video_voice_conferencing\Video_Voice_Conferencing\Peer-to-peer Conference System\bin\Debug\Conference System.pdb
+C:\Users\karam\Desktop\video_voice_conferencing\Video_Voice_Conferencing\Peer-to-peer Conference System\obj\Debug\Conference System.csprojResolveAssemblyReference.cache
+C:\Users\karam\Desktop\video_voice_conferencing\Video_Voice_Conferencing\Peer-to-peer Conference System\obj\Debug\Conference_System.Form1.resources
+C:\Users\karam\Desktop\video_voice_conferencing\Video_Voice_Conferencing\Peer-to-peer Conference System\obj\Debug\Conference System.csproj.GenerateResource.Cache
+C:\Users\karam\Desktop\video_voice_conferencing\Video_Voice_Conferencing\Peer-to-peer Conference System\obj\Debug\Conference System.exe
+C:\Users\karam\Desktop\video_voice_conferencing\Video_Voice_Conferencing\Peer-to-peer Conference System\obj\Debug\Conference System.pdb
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\Peer-to-peer Conference System\bin\Debug\Conference System.exe
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\Peer-to-peer Conference System\bin\Debug\Conference System.pdb
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\Peer-to-peer Conference System\obj\Debug\Conference System.csprojResolveAssemblyReference.cache
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\Peer-to-peer Conference System\obj\Debug\Conference_System.Form1.resources
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\Peer-to-peer Conference System\obj\Debug\Conference System.csproj.GenerateResource.Cache
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\Peer-to-peer Conference System\obj\Debug\Conference System.exe
+C:\Users\karam\Documents\Visual Studio 2015\Projects\HiWPF\Peer-to-peer Conference System\obj\Debug\Conference System.pdb

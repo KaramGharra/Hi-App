@@ -1,0 +1,33 @@
+﻿<Window x:Class="HiWPF.FileSharing"
+        xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+        xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+        xmlns:d="http://schemas.microsoft.com/expression/blend/2008"
+        xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006"
+        xmlns:local="clr-namespace:HiWPF"
+        mc:Ignorable="d"
+        Title="FileSharing" Height="165.113" Width="358.203">
+    <Grid RenderTransformOrigin="0.5,0.5" Margin="0,0,-8,0">
+        <Grid.Background>
+            <LinearGradientBrush EndPoint="0.5,1" StartPoint="0.5,0">
+                <LinearGradientBrush.RelativeTransform>
+                    <TransformGroup>
+                        <ScaleTransform CenterY="0.5" CenterX="0.5" ScaleY="-1" ScaleX="-90"/>
+                        <SkewTransform AngleY="0" AngleX="0" CenterY="0.5" CenterX="0.5"/>
+                        <RotateTransform Angle="148.392" CenterY="0.5" CenterX="0.5"/>
+                        <TranslateTransform/>
+                    </TransformGroup>
+                </LinearGradientBrush.RelativeTransform>
+                <GradientStop Color="#FF4A616C" Offset="0"/>
+                <GradientStop Color="#FF17A7EA" Offset="1"/>
+            </LinearGradientBrush>
+        </Grid.Background>
+        <RadioButton x:Name="RBDocument" Content="Document" HorizontalAlignment="Left" VerticalAlignment="Top" Margin="19,15,0,0" Foreground="White" IsChecked="True" Checked="RBDocument_Checked"/>
+        <RadioButton x:Name="RBImage" Content="Image" HorizontalAlignment="Left" Margin="154,15,0,0" VerticalAlignment="Top" Foreground="White" Checked="RBImage_Checked"/>
+        <RadioButton x:Name="RBRar" Content="RAR" HorizontalAlignment="Left" Margin="268,18,0,0" VerticalAlignment="Top" Foreground="White" Checked="RBRar_Checked"/>
+        <Button x:Name="btnBrowse" Content="Browse" HorizontalAlignment="Left" Margin="19,47,0,0" VerticalAlignment="Top" Width="75" Background="#FF336181" Click="btnBrowse_Click"/>
+        <TextBox x:Name="tbPath" Text="File Path" HorizontalAlignment="Left" Height="23" Margin="113,47,0,0" TextWrapping="Wrap" VerticalAlignment="Top" Width="196"/>
+        <Button x:Name="btnUpload" Content="Upload" HorizontalAlignment="Left" Margin="113,91,0,0" VerticalAlignment="Top" Width="75" Click="btnUpload_Click"/>
+        <Button x:Name="btnClose" Content="Close" HorizontalAlignment="Left" Margin="234,91,0,0" VerticalAlignment="Top" Width="75" Click="btnClose_Click"/>
+
+    </Grid>
+</Window>

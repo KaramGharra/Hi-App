@@ -1,0 +1,15 @@
+﻿<UserControl x:Class="HiWPF.CustomRows.SearchGroupRow"
+             xmlns="http://schemas.microsoft.com/winfx/2006/xaml/presentation"
+             xmlns:x="http://schemas.microsoft.com/winfx/2006/xaml"
+             xmlns:mc="http://schemas.openxmlformats.org/markup-compatibility/2006" 
+             xmlns:d="http://schemas.microsoft.com/expression/blend/2008" 
+             xmlns:local="clr-namespace:HiWPF.CustomRows"
+             mc:Ignorable="d" d:DesignWidth="219" Height="84" Width="250" BorderBrush="White">
+   
+    <Grid Name="OpenChat" MouseDown="OpenChat_MouseDown" >
+        <Image x:Name="GP" HorizontalAlignment="Left" Width="55.909" Source="https://cdn3.iconfinder.com/data/icons/interface-8/128/InterfaceExpendet-09-128.png" Margin="10,0,0,0" RenderTransformOrigin="1.377,0.464"/>
+        <Label x:Name="GN" Content="Group Name" Margin="70.909,21,10,10" FontFamily="Comic Sans MS" FontSize="16" Foreground="White" MouseDown="OpenChat_MouseDown"/>
+        <Label x:Name="Creator" Content="Creator" HorizontalAlignment="Right" Margin="0,16,4.006,0" VerticalAlignment="Top" Visibility="Hidden"/>
+
+    </Grid>
+</UserControl>

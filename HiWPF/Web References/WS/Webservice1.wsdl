@@ -1,0 +1,3065 @@
+<?xml version="1.0" encoding="utf-8"?>
+<wsdl:definitions xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/" xmlns:mime="http://schemas.xmlsoap.org/wsdl/mime/" xmlns:tns="http://tempuri.org/" xmlns:s="http://www.w3.org/2001/XMLSchema" xmlns:s1="http://tempuri.org/AbstractTypes" xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/" xmlns:tm="http://microsoft.com/wsdl/mime/textMatching/" xmlns:http="http://schemas.xmlsoap.org/wsdl/http/" xmlns:soap12="http://schemas.xmlsoap.org/wsdl/soap12/" targetNamespace="http://tempuri.org/" xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/">
+  <wsdl:types>
+    <s:schema elementFormDefault="qualified" targetNamespace="http://tempuri.org/">
+      <s:element name="VerifyUsers">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iUN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="VerifyUsersResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="VerifyUsersResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUser">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iUN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="iPWD" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="InsertUserResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="InsertUserResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UNavailable">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="iUN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UNavailableResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UNavailableResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePassword">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="PW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="nPW" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="cnPW" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangePasswordResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="ChangePasswordResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupsByParticipant">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Participant" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetGroupsByParticipantResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetGroupsByParticipantResult" type="tns:ArrayOfGroupInfo" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfGroupInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="GroupInfo" nillable="true" type="tns:GroupInfo" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="GroupInfo">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="G_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Creator" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="G_Pic" type="s:string" />
+          <s:element minOccurs="1" maxOccurs="1" name="NumOfParticipants" type="s:int" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetParticipantsOfGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="G_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Creator" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetParticipantsOfGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetParticipantsOfGroupResult" type="tns:ArrayOfUsers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfUsers">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Users" nillable="true" type="tns:Users" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Users">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="PWD" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="getContacts">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="contact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getContactsResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getContactsResult" type="tns:ArrayOfUsers" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="addContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="addContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteContact">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Contact" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteContactResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteContactResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="G_Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="createGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="createGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="G_Name" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="G_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="newParticipant" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="AddToGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="AddToGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="getProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="getProfileResult" type="tns:Profile" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Profile">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Nick_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="First_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Last_Name" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Phone_Num" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Profile_Pic" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="UpdateProfile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Nick_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="LN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="phoneNum" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="profilePic" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UpdateProfileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UpdateProfileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeaveGroup">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="G_Name" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Participant" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="LeaveGroupResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="LeaveGroupResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Register">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RegisterResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RegisterResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAgain">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="email" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendAgainResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendAgainResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCode">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Email" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Code" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="CheckCodeResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="CheckCodeResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessage">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="MSG" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendMessageResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendMessageResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessagesResult" type="tns:ArrayOfMessages" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfMessages">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Messages" nillable="true" type="tns:Messages" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Messages">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Reciver" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Message" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetAllMessages">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="to" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetAllMessagesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetAllMessagesResult" type="tns:ArrayOfMessages" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMessegesStatus">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeMessegesStatusResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="GetMessegesForChat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="From" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="To" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetMessegesForChatResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetMessegesForChatResult" type="tns:ArrayOfMessages" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetIPAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="IP_Address" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SetIPAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SetIPAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteIPAddress">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteIPAddressResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteIPAddressResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIP">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="un" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetIPResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetIPResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendInvitation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="un" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="contact" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="VidVoice" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="SendInvitationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="SendInvitationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RespondToInvitation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="un" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="RespondToInvitationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="RespondToInvitationResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvitation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="un" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetInvitationResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetInvitationResult" type="tns:Invitation" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="Invitation">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="UN" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Cont" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="VidVoice" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="ChangeInvitationStat">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="un" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="ChangeInvitationStatResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="DeleteInvitation">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="un" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Con" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteInvitationResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearDB">
+        <s:complexType />
+      </s:element>
+      <s:element name="ClearDBResponse">
+        <s:complexType />
+      </s:element>
+      <s:element name="Upload">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="FileType" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Data" type="s:base64Binary" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="UploadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="UploadResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="Download">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DownloadResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DownloadResult" type="tns:ArrayOfFiles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:complexType name="ArrayOfFiles">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="unbounded" name="Files" nillable="true" type="tns:Files" />
+        </s:sequence>
+      </s:complexType>
+      <s:complexType name="Files">
+        <s:sequence>
+          <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileName" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileType" type="s:string" />
+          <s:element minOccurs="0" maxOccurs="1" name="FileContent" type="s:base64Binary" />
+          <s:element minOccurs="0" maxOccurs="1" name="Status" type="s:string" />
+        </s:sequence>
+      </s:complexType>
+      <s:element name="GetFiles">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="GetFilesResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="GetFilesResult" type="tns:ArrayOfFiles" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFile">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="Sender" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Receiver" type="s:string" />
+            <s:element minOccurs="0" maxOccurs="1" name="Date" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="DeleteFileResponse">
+        <s:complexType>
+          <s:sequence>
+            <s:element minOccurs="0" maxOccurs="1" name="DeleteFileResult" type="s:string" />
+          </s:sequence>
+        </s:complexType>
+      </s:element>
+      <s:element name="string" nillable="true" type="s:string" />
+      <s:element name="ArrayOfGroupInfo" nillable="true" type="tns:ArrayOfGroupInfo" />
+      <s:element name="ArrayOfUsers" nillable="true" type="tns:ArrayOfUsers" />
+      <s:element name="Profile" nillable="true" type="tns:Profile" />
+      <s:element name="ArrayOfMessages" nillable="true" type="tns:ArrayOfMessages" />
+      <s:element name="Invitation" nillable="true" type="tns:Invitation" />
+      <s:element name="ArrayOfFiles" nillable="true" type="tns:ArrayOfFiles" />
+    </s:schema>
+    <s:schema targetNamespace="http://tempuri.org/AbstractTypes">
+      <s:import namespace="http://schemas.xmlsoap.org/soap/encoding/" />
+      <s:complexType name="StringArray">
+        <s:complexContent mixed="false">
+          <s:restriction base="soapenc:Array">
+            <s:sequence>
+              <s:element minOccurs="0" maxOccurs="unbounded" name="String" type="s:string" />
+            </s:sequence>
+          </s:restriction>
+        </s:complexContent>
+      </s:complexType>
+    </s:schema>
+  </wsdl:types>
+  <wsdl:message name="VerifyUsersSoapIn">
+    <wsdl:part name="parameters" element="tns:VerifyUsers" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUsersSoapOut">
+    <wsdl:part name="parameters" element="tns:VerifyUsersResponse" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserSoapIn">
+    <wsdl:part name="parameters" element="tns:InsertUser" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserSoapOut">
+    <wsdl:part name="parameters" element="tns:InsertUserResponse" />
+  </wsdl:message>
+  <wsdl:message name="UNavailableSoapIn">
+    <wsdl:part name="parameters" element="tns:UNavailable" />
+  </wsdl:message>
+  <wsdl:message name="UNavailableSoapOut">
+    <wsdl:part name="parameters" element="tns:UNavailableResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangePassword" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangePasswordResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsByParticipantSoapIn">
+    <wsdl:part name="parameters" element="tns:GetGroupsByParticipant" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsByParticipantSoapOut">
+    <wsdl:part name="parameters" element="tns:GetGroupsByParticipantResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetParticipantsOfGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:GetParticipantsOfGroup" />
+  </wsdl:message>
+  <wsdl:message name="GetParticipantsOfGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:GetParticipantsOfGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="getContactsSoapIn">
+    <wsdl:part name="parameters" element="tns:getContacts" />
+  </wsdl:message>
+  <wsdl:message name="getContactsSoapOut">
+    <wsdl:part name="parameters" element="tns:getContactsResponse" />
+  </wsdl:message>
+  <wsdl:message name="addContactSoapIn">
+    <wsdl:part name="parameters" element="tns:addContact" />
+  </wsdl:message>
+  <wsdl:message name="addContactSoapOut">
+    <wsdl:part name="parameters" element="tns:addContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteContact" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteContactResponse" />
+  </wsdl:message>
+  <wsdl:message name="createGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:createGroup" />
+  </wsdl:message>
+  <wsdl:message name="createGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:createGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteGroup" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="AddToGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:AddToGroup" />
+  </wsdl:message>
+  <wsdl:message name="AddToGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:AddToGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="getProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:getProfile" />
+  </wsdl:message>
+  <wsdl:message name="getProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:getProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileSoapIn">
+    <wsdl:part name="parameters" element="tns:UpdateProfile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileSoapOut">
+    <wsdl:part name="parameters" element="tns:UpdateProfileResponse" />
+  </wsdl:message>
+  <wsdl:message name="LeaveGroupSoapIn">
+    <wsdl:part name="parameters" element="tns:LeaveGroup" />
+  </wsdl:message>
+  <wsdl:message name="LeaveGroupSoapOut">
+    <wsdl:part name="parameters" element="tns:LeaveGroupResponse" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapIn">
+    <wsdl:part name="parameters" element="tns:Register" />
+  </wsdl:message>
+  <wsdl:message name="RegisterSoapOut">
+    <wsdl:part name="parameters" element="tns:RegisterResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendAgainSoapIn">
+    <wsdl:part name="parameters" element="tns:SendAgain" />
+  </wsdl:message>
+  <wsdl:message name="SendAgainSoapOut">
+    <wsdl:part name="parameters" element="tns:SendAgainResponse" />
+  </wsdl:message>
+  <wsdl:message name="CheckCodeSoapIn">
+    <wsdl:part name="parameters" element="tns:CheckCode" />
+  </wsdl:message>
+  <wsdl:message name="CheckCodeSoapOut">
+    <wsdl:part name="parameters" element="tns:CheckCodeResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapIn">
+    <wsdl:part name="parameters" element="tns:SendMessage" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageSoapOut">
+    <wsdl:part name="parameters" element="tns:SendMessageResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetAllMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetAllMessagesResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessegesStatusSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeMessegesStatus" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessegesStatusSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeMessegesStatusResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetMessegesForChatSoapIn">
+    <wsdl:part name="parameters" element="tns:GetMessegesForChat" />
+  </wsdl:message>
+  <wsdl:message name="GetMessegesForChatSoapOut">
+    <wsdl:part name="parameters" element="tns:GetMessegesForChatResponse" />
+  </wsdl:message>
+  <wsdl:message name="SetIPAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:SetIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="SetIPAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:SetIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIPAddressSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteIPAddress" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIPAddressSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteIPAddressResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetIPSoapIn">
+    <wsdl:part name="parameters" element="tns:GetIP" />
+  </wsdl:message>
+  <wsdl:message name="GetIPSoapOut">
+    <wsdl:part name="parameters" element="tns:GetIPResponse" />
+  </wsdl:message>
+  <wsdl:message name="SendInvitationSoapIn">
+    <wsdl:part name="parameters" element="tns:SendInvitation" />
+  </wsdl:message>
+  <wsdl:message name="SendInvitationSoapOut">
+    <wsdl:part name="parameters" element="tns:SendInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="RespondToInvitationSoapIn">
+    <wsdl:part name="parameters" element="tns:RespondToInvitation" />
+  </wsdl:message>
+  <wsdl:message name="RespondToInvitationSoapOut">
+    <wsdl:part name="parameters" element="tns:RespondToInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetInvitationSoapIn">
+    <wsdl:part name="parameters" element="tns:GetInvitation" />
+  </wsdl:message>
+  <wsdl:message name="GetInvitationSoapOut">
+    <wsdl:part name="parameters" element="tns:GetInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ChangeInvitationStatSoapIn">
+    <wsdl:part name="parameters" element="tns:ChangeInvitationStat" />
+  </wsdl:message>
+  <wsdl:message name="ChangeInvitationStatSoapOut">
+    <wsdl:part name="parameters" element="tns:ChangeInvitationStatResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInvitationSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteInvitation" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInvitationSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteInvitationResponse" />
+  </wsdl:message>
+  <wsdl:message name="ClearDBSoapIn">
+    <wsdl:part name="parameters" element="tns:ClearDB" />
+  </wsdl:message>
+  <wsdl:message name="ClearDBSoapOut">
+    <wsdl:part name="parameters" element="tns:ClearDBResponse" />
+  </wsdl:message>
+  <wsdl:message name="UploadSoapIn">
+    <wsdl:part name="parameters" element="tns:Upload" />
+  </wsdl:message>
+  <wsdl:message name="UploadSoapOut">
+    <wsdl:part name="parameters" element="tns:UploadResponse" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSoapIn">
+    <wsdl:part name="parameters" element="tns:Download" />
+  </wsdl:message>
+  <wsdl:message name="DownloadSoapOut">
+    <wsdl:part name="parameters" element="tns:DownloadResponse" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesSoapIn">
+    <wsdl:part name="parameters" element="tns:GetFiles" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesSoapOut">
+    <wsdl:part name="parameters" element="tns:GetFilesResponse" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapIn">
+    <wsdl:part name="parameters" element="tns:DeleteFile" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileSoapOut">
+    <wsdl:part name="parameters" element="tns:DeleteFileResponse" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUsersHttpGetIn">
+    <wsdl:part name="iUN" type="s:string" />
+    <wsdl:part name="iPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUsersHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserHttpGetIn">
+    <wsdl:part name="iUN" type="s:string" />
+    <wsdl:part name="iPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UNavailableHttpGetIn">
+    <wsdl:part name="iUN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UNavailableHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="PW" type="s:string" />
+    <wsdl:part name="nPW" type="s:string" />
+    <wsdl:part name="cnPW" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsByParticipantHttpGetIn">
+    <wsdl:part name="Participant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsByParticipantHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetParticipantsOfGroupHttpGetIn">
+    <wsdl:part name="G_Name" type="s:string" />
+    <wsdl:part name="Creator" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParticipantsOfGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsers" />
+  </wsdl:message>
+  <wsdl:message name="getContactsHttpGetIn">
+    <wsdl:part name="contact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getContactsHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsers" />
+  </wsdl:message>
+  <wsdl:message name="addContactHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="Contact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="Contact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="createGroupHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGroupHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToGroupHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+    <wsdl:part name="newParticipant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getProfileHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProfileHttpGetOut">
+    <wsdl:part name="Body" element="tns:Profile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="Nick_Name" type="s:string" />
+    <wsdl:part name="FN" type="s:string" />
+    <wsdl:part name="LN" type="s:string" />
+    <wsdl:part name="phoneNum" type="s:string" />
+    <wsdl:part name="profilePic" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveGroupHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+    <wsdl:part name="Participant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveGroupHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterHttpGetIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAgainHttpGetIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAgainHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCodeHttpGetIn">
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCodeHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+    <wsdl:part name="MSG" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpGetIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesHttpGetIn">
+    <wsdl:part name="to" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessages" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessegesStatusHttpGetIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessegesStatusHttpGetOut" />
+  <wsdl:message name="GetMessegesForChatHttpGetIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessegesForChatHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessages" />
+  </wsdl:message>
+  <wsdl:message name="SetIPAddressHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="IP_Address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetIPAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIPAddressHttpGetIn">
+    <wsdl:part name="UN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIPAddressHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPHttpGetIn">
+    <wsdl:part name="un" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendInvitationHttpGetIn">
+    <wsdl:part name="un" type="s:string" />
+    <wsdl:part name="contact" type="s:string" />
+    <wsdl:part name="VidVoice" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendInvitationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RespondToInvitationHttpGetIn">
+    <wsdl:part name="un" type="s:string" />
+    <wsdl:part name="Status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RespondToInvitationHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInvitationHttpGetIn">
+    <wsdl:part name="un" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInvitationHttpGetOut">
+    <wsdl:part name="Body" element="tns:Invitation" />
+  </wsdl:message>
+  <wsdl:message name="ChangeInvitationStatHttpGetIn">
+    <wsdl:part name="un" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeInvitationStatHttpGetOut" />
+  <wsdl:message name="DeleteInvitationHttpGetIn">
+    <wsdl:part name="un" type="s:string" />
+    <wsdl:part name="Con" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInvitationHttpGetOut" />
+  <wsdl:message name="ClearDBHttpGetIn" />
+  <wsdl:message name="ClearDBHttpGetOut" />
+  <wsdl:message name="UploadHttpGetIn">
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Receiver" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="FileType" type="s:string" />
+    <wsdl:part name="Data" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadHttpGetIn">
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Receiver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFiles" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpGetIn">
+    <wsdl:part name="Receiver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpGetOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFiles" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpGetIn">
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Receiver" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpGetOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUsersHttpPostIn">
+    <wsdl:part name="iUN" type="s:string" />
+    <wsdl:part name="iPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="VerifyUsersHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserHttpPostIn">
+    <wsdl:part name="iUN" type="s:string" />
+    <wsdl:part name="iPWD" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="InsertUserHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="UNavailableHttpPostIn">
+    <wsdl:part name="iUN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UNavailableHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="PW" type="s:string" />
+    <wsdl:part name="nPW" type="s:string" />
+    <wsdl:part name="cnPW" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangePasswordHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsByParticipantHttpPostIn">
+    <wsdl:part name="Participant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetGroupsByParticipantHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfGroupInfo" />
+  </wsdl:message>
+  <wsdl:message name="GetParticipantsOfGroupHttpPostIn">
+    <wsdl:part name="G_Name" type="s:string" />
+    <wsdl:part name="Creator" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetParticipantsOfGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsers" />
+  </wsdl:message>
+  <wsdl:message name="getContactsHttpPostIn">
+    <wsdl:part name="contact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getContactsHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfUsers" />
+  </wsdl:message>
+  <wsdl:message name="addContactHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="Contact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="addContactHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="Contact" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteContactHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="createGroupHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="createGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGroupHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToGroupHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+    <wsdl:part name="newParticipant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="AddToGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="getProfileHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="getProfileHttpPostOut">
+    <wsdl:part name="Body" element="tns:Profile" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="Nick_Name" type="s:string" />
+    <wsdl:part name="FN" type="s:string" />
+    <wsdl:part name="LN" type="s:string" />
+    <wsdl:part name="phoneNum" type="s:string" />
+    <wsdl:part name="profilePic" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="UpdateProfileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveGroupHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="G_Name" type="s:string" />
+    <wsdl:part name="Participant" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="LeaveGroupHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterHttpPostIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RegisterHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAgainHttpPostIn">
+    <wsdl:part name="email" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendAgainHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCodeHttpPostIn">
+    <wsdl:part name="Email" type="s:string" />
+    <wsdl:part name="Code" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="CheckCodeHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+    <wsdl:part name="MSG" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendMessageHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpPostIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="to" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessagesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessages" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesHttpPostIn">
+    <wsdl:part name="to" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetAllMessagesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessages" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessegesStatusHttpPostIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeMessegesStatusHttpPostOut" />
+  <wsdl:message name="GetMessegesForChatHttpPostIn">
+    <wsdl:part name="From" type="s:string" />
+    <wsdl:part name="To" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetMessegesForChatHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfMessages" />
+  </wsdl:message>
+  <wsdl:message name="SetIPAddressHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+    <wsdl:part name="IP_Address" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SetIPAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIPAddressHttpPostIn">
+    <wsdl:part name="UN" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteIPAddressHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPHttpPostIn">
+    <wsdl:part name="un" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetIPHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="SendInvitationHttpPostIn">
+    <wsdl:part name="un" type="s:string" />
+    <wsdl:part name="contact" type="s:string" />
+    <wsdl:part name="VidVoice" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="SendInvitationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="RespondToInvitationHttpPostIn">
+    <wsdl:part name="un" type="s:string" />
+    <wsdl:part name="Status" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="RespondToInvitationHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInvitationHttpPostIn">
+    <wsdl:part name="un" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetInvitationHttpPostOut">
+    <wsdl:part name="Body" element="tns:Invitation" />
+  </wsdl:message>
+  <wsdl:message name="ChangeInvitationStatHttpPostIn">
+    <wsdl:part name="un" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="ChangeInvitationStatHttpPostOut" />
+  <wsdl:message name="DeleteInvitationHttpPostIn">
+    <wsdl:part name="un" type="s:string" />
+    <wsdl:part name="Con" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteInvitationHttpPostOut" />
+  <wsdl:message name="ClearDBHttpPostIn" />
+  <wsdl:message name="ClearDBHttpPostOut" />
+  <wsdl:message name="UploadHttpPostIn">
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Receiver" type="s:string" />
+    <wsdl:part name="FileName" type="s:string" />
+    <wsdl:part name="FileType" type="s:string" />
+    <wsdl:part name="Data" type="s1:StringArray" />
+  </wsdl:message>
+  <wsdl:message name="UploadHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadHttpPostIn">
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Receiver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DownloadHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFiles" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpPostIn">
+    <wsdl:part name="Receiver" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="GetFilesHttpPostOut">
+    <wsdl:part name="Body" element="tns:ArrayOfFiles" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpPostIn">
+    <wsdl:part name="Sender" type="s:string" />
+    <wsdl:part name="Receiver" type="s:string" />
+    <wsdl:part name="Date" type="s:string" />
+  </wsdl:message>
+  <wsdl:message name="DeleteFileHttpPostOut">
+    <wsdl:part name="Body" element="tns:string" />
+  </wsdl:message>
+  <wsdl:portType name="WebService1Soap">
+    <wsdl:operation name="VerifyUsers">
+      <wsdl:input message="tns:VerifyUsersSoapIn" />
+      <wsdl:output message="tns:VerifyUsersSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input message="tns:InsertUserSoapIn" />
+      <wsdl:output message="tns:InsertUserSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UNavailable">
+      <wsdl:input message="tns:UNavailableSoapIn" />
+      <wsdl:output message="tns:UNavailableSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordSoapIn" />
+      <wsdl:output message="tns:ChangePasswordSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsByParticipant">
+      <wsdl:input message="tns:GetGroupsByParticipantSoapIn" />
+      <wsdl:output message="tns:GetGroupsByParticipantSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParticipantsOfGroup">
+      <wsdl:input message="tns:GetParticipantsOfGroupSoapIn" />
+      <wsdl:output message="tns:GetParticipantsOfGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <wsdl:input message="tns:getContactsSoapIn" />
+      <wsdl:output message="tns:getContactsSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <wsdl:input message="tns:addContactSoapIn" />
+      <wsdl:output message="tns:addContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <wsdl:input message="tns:DeleteContactSoapIn" />
+      <wsdl:output message="tns:DeleteContactSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <wsdl:input message="tns:createGroupSoapIn" />
+      <wsdl:output message="tns:createGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input message="tns:DeleteGroupSoapIn" />
+      <wsdl:output message="tns:DeleteGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToGroup">
+      <wsdl:input message="tns:AddToGroupSoapIn" />
+      <wsdl:output message="tns:AddToGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <wsdl:input message="tns:getProfileSoapIn" />
+      <wsdl:output message="tns:getProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input message="tns:UpdateProfileSoapIn" />
+      <wsdl:output message="tns:UpdateProfileSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <wsdl:input message="tns:LeaveGroupSoapIn" />
+      <wsdl:output message="tns:LeaveGroupSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input message="tns:RegisterSoapIn" />
+      <wsdl:output message="tns:RegisterSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAgain">
+      <wsdl:input message="tns:SendAgainSoapIn" />
+      <wsdl:output message="tns:SendAgainSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCode">
+      <wsdl:input message="tns:CheckCodeSoapIn" />
+      <wsdl:output message="tns:CheckCodeSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageSoapIn" />
+      <wsdl:output message="tns:SendMessageSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input message="tns:GetMessagesSoapIn" />
+      <wsdl:output message="tns:GetMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <wsdl:input message="tns:GetAllMessagesSoapIn" />
+      <wsdl:output message="tns:GetAllMessagesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessegesStatus">
+      <wsdl:input message="tns:ChangeMessegesStatusSoapIn" />
+      <wsdl:output message="tns:ChangeMessegesStatusSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessegesForChat">
+      <wsdl:input message="tns:GetMessegesForChatSoapIn" />
+      <wsdl:output message="tns:GetMessegesForChatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIPAddress">
+      <wsdl:input message="tns:SetIPAddressSoapIn" />
+      <wsdl:output message="tns:SetIPAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPAddress">
+      <wsdl:input message="tns:DeleteIPAddressSoapIn" />
+      <wsdl:output message="tns:DeleteIPAddressSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <wsdl:input message="tns:GetIPSoapIn" />
+      <wsdl:output message="tns:GetIPSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitation">
+      <wsdl:input message="tns:SendInvitationSoapIn" />
+      <wsdl:output message="tns:SendInvitationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RespondToInvitation">
+      <wsdl:input message="tns:RespondToInvitationSoapIn" />
+      <wsdl:output message="tns:RespondToInvitationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitation">
+      <wsdl:input message="tns:GetInvitationSoapIn" />
+      <wsdl:output message="tns:GetInvitationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvitationStat">
+      <wsdl:input message="tns:ChangeInvitationStatSoapIn" />
+      <wsdl:output message="tns:ChangeInvitationStatSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvitation">
+      <wsdl:input message="tns:DeleteInvitationSoapIn" />
+      <wsdl:output message="tns:DeleteInvitationSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDB">
+      <wsdl:input message="tns:ClearDBSoapIn" />
+      <wsdl:output message="tns:ClearDBSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <wsdl:input message="tns:UploadSoapIn" />
+      <wsdl:output message="tns:UploadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <wsdl:input message="tns:DownloadSoapIn" />
+      <wsdl:output message="tns:DownloadSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <wsdl:input message="tns:GetFilesSoapIn" />
+      <wsdl:output message="tns:GetFilesSoapOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:input message="tns:DeleteFileSoapIn" />
+      <wsdl:output message="tns:DeleteFileSoapOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService1HttpGet">
+    <wsdl:operation name="VerifyUsers">
+      <wsdl:input message="tns:VerifyUsersHttpGetIn" />
+      <wsdl:output message="tns:VerifyUsersHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input message="tns:InsertUserHttpGetIn" />
+      <wsdl:output message="tns:InsertUserHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UNavailable">
+      <wsdl:input message="tns:UNavailableHttpGetIn" />
+      <wsdl:output message="tns:UNavailableHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordHttpGetIn" />
+      <wsdl:output message="tns:ChangePasswordHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsByParticipant">
+      <wsdl:input message="tns:GetGroupsByParticipantHttpGetIn" />
+      <wsdl:output message="tns:GetGroupsByParticipantHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParticipantsOfGroup">
+      <wsdl:input message="tns:GetParticipantsOfGroupHttpGetIn" />
+      <wsdl:output message="tns:GetParticipantsOfGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <wsdl:input message="tns:getContactsHttpGetIn" />
+      <wsdl:output message="tns:getContactsHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <wsdl:input message="tns:addContactHttpGetIn" />
+      <wsdl:output message="tns:addContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <wsdl:input message="tns:DeleteContactHttpGetIn" />
+      <wsdl:output message="tns:DeleteContactHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <wsdl:input message="tns:createGroupHttpGetIn" />
+      <wsdl:output message="tns:createGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input message="tns:DeleteGroupHttpGetIn" />
+      <wsdl:output message="tns:DeleteGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToGroup">
+      <wsdl:input message="tns:AddToGroupHttpGetIn" />
+      <wsdl:output message="tns:AddToGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <wsdl:input message="tns:getProfileHttpGetIn" />
+      <wsdl:output message="tns:getProfileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input message="tns:UpdateProfileHttpGetIn" />
+      <wsdl:output message="tns:UpdateProfileHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <wsdl:input message="tns:LeaveGroupHttpGetIn" />
+      <wsdl:output message="tns:LeaveGroupHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input message="tns:RegisterHttpGetIn" />
+      <wsdl:output message="tns:RegisterHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAgain">
+      <wsdl:input message="tns:SendAgainHttpGetIn" />
+      <wsdl:output message="tns:SendAgainHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCode">
+      <wsdl:input message="tns:CheckCodeHttpGetIn" />
+      <wsdl:output message="tns:CheckCodeHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpGetIn" />
+      <wsdl:output message="tns:SendMessageHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input message="tns:GetMessagesHttpGetIn" />
+      <wsdl:output message="tns:GetMessagesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <wsdl:input message="tns:GetAllMessagesHttpGetIn" />
+      <wsdl:output message="tns:GetAllMessagesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessegesStatus">
+      <wsdl:input message="tns:ChangeMessegesStatusHttpGetIn" />
+      <wsdl:output message="tns:ChangeMessegesStatusHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessegesForChat">
+      <wsdl:input message="tns:GetMessegesForChatHttpGetIn" />
+      <wsdl:output message="tns:GetMessegesForChatHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIPAddress">
+      <wsdl:input message="tns:SetIPAddressHttpGetIn" />
+      <wsdl:output message="tns:SetIPAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPAddress">
+      <wsdl:input message="tns:DeleteIPAddressHttpGetIn" />
+      <wsdl:output message="tns:DeleteIPAddressHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <wsdl:input message="tns:GetIPHttpGetIn" />
+      <wsdl:output message="tns:GetIPHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitation">
+      <wsdl:input message="tns:SendInvitationHttpGetIn" />
+      <wsdl:output message="tns:SendInvitationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RespondToInvitation">
+      <wsdl:input message="tns:RespondToInvitationHttpGetIn" />
+      <wsdl:output message="tns:RespondToInvitationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitation">
+      <wsdl:input message="tns:GetInvitationHttpGetIn" />
+      <wsdl:output message="tns:GetInvitationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvitationStat">
+      <wsdl:input message="tns:ChangeInvitationStatHttpGetIn" />
+      <wsdl:output message="tns:ChangeInvitationStatHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvitation">
+      <wsdl:input message="tns:DeleteInvitationHttpGetIn" />
+      <wsdl:output message="tns:DeleteInvitationHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDB">
+      <wsdl:input message="tns:ClearDBHttpGetIn" />
+      <wsdl:output message="tns:ClearDBHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <wsdl:input message="tns:UploadHttpGetIn" />
+      <wsdl:output message="tns:UploadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <wsdl:input message="tns:DownloadHttpGetIn" />
+      <wsdl:output message="tns:DownloadHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <wsdl:input message="tns:GetFilesHttpGetIn" />
+      <wsdl:output message="tns:GetFilesHttpGetOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:input message="tns:DeleteFileHttpGetIn" />
+      <wsdl:output message="tns:DeleteFileHttpGetOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:portType name="WebService1HttpPost">
+    <wsdl:operation name="VerifyUsers">
+      <wsdl:input message="tns:VerifyUsersHttpPostIn" />
+      <wsdl:output message="tns:VerifyUsersHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <wsdl:input message="tns:InsertUserHttpPostIn" />
+      <wsdl:output message="tns:InsertUserHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UNavailable">
+      <wsdl:input message="tns:UNavailableHttpPostIn" />
+      <wsdl:output message="tns:UNavailableHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <wsdl:input message="tns:ChangePasswordHttpPostIn" />
+      <wsdl:output message="tns:ChangePasswordHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsByParticipant">
+      <wsdl:input message="tns:GetGroupsByParticipantHttpPostIn" />
+      <wsdl:output message="tns:GetGroupsByParticipantHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetParticipantsOfGroup">
+      <wsdl:input message="tns:GetParticipantsOfGroupHttpPostIn" />
+      <wsdl:output message="tns:GetParticipantsOfGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <wsdl:input message="tns:getContactsHttpPostIn" />
+      <wsdl:output message="tns:getContactsHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <wsdl:input message="tns:addContactHttpPostIn" />
+      <wsdl:output message="tns:addContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <wsdl:input message="tns:DeleteContactHttpPostIn" />
+      <wsdl:output message="tns:DeleteContactHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <wsdl:input message="tns:createGroupHttpPostIn" />
+      <wsdl:output message="tns:createGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <wsdl:input message="tns:DeleteGroupHttpPostIn" />
+      <wsdl:output message="tns:DeleteGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="AddToGroup">
+      <wsdl:input message="tns:AddToGroupHttpPostIn" />
+      <wsdl:output message="tns:AddToGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <wsdl:input message="tns:getProfileHttpPostIn" />
+      <wsdl:output message="tns:getProfileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <wsdl:input message="tns:UpdateProfileHttpPostIn" />
+      <wsdl:output message="tns:UpdateProfileHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <wsdl:input message="tns:LeaveGroupHttpPostIn" />
+      <wsdl:output message="tns:LeaveGroupHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <wsdl:input message="tns:RegisterHttpPostIn" />
+      <wsdl:output message="tns:RegisterHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendAgain">
+      <wsdl:input message="tns:SendAgainHttpPostIn" />
+      <wsdl:output message="tns:SendAgainHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="CheckCode">
+      <wsdl:input message="tns:CheckCodeHttpPostIn" />
+      <wsdl:output message="tns:CheckCodeHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <wsdl:input message="tns:SendMessageHttpPostIn" />
+      <wsdl:output message="tns:SendMessageHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <wsdl:input message="tns:GetMessagesHttpPostIn" />
+      <wsdl:output message="tns:GetMessagesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <wsdl:input message="tns:GetAllMessagesHttpPostIn" />
+      <wsdl:output message="tns:GetAllMessagesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessegesStatus">
+      <wsdl:input message="tns:ChangeMessegesStatusHttpPostIn" />
+      <wsdl:output message="tns:ChangeMessegesStatusHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessegesForChat">
+      <wsdl:input message="tns:GetMessegesForChatHttpPostIn" />
+      <wsdl:output message="tns:GetMessegesForChatHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SetIPAddress">
+      <wsdl:input message="tns:SetIPAddressHttpPostIn" />
+      <wsdl:output message="tns:SetIPAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPAddress">
+      <wsdl:input message="tns:DeleteIPAddressHttpPostIn" />
+      <wsdl:output message="tns:DeleteIPAddressHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <wsdl:input message="tns:GetIPHttpPostIn" />
+      <wsdl:output message="tns:GetIPHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitation">
+      <wsdl:input message="tns:SendInvitationHttpPostIn" />
+      <wsdl:output message="tns:SendInvitationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="RespondToInvitation">
+      <wsdl:input message="tns:RespondToInvitationHttpPostIn" />
+      <wsdl:output message="tns:RespondToInvitationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitation">
+      <wsdl:input message="tns:GetInvitationHttpPostIn" />
+      <wsdl:output message="tns:GetInvitationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvitationStat">
+      <wsdl:input message="tns:ChangeInvitationStatHttpPostIn" />
+      <wsdl:output message="tns:ChangeInvitationStatHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvitation">
+      <wsdl:input message="tns:DeleteInvitationHttpPostIn" />
+      <wsdl:output message="tns:DeleteInvitationHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDB">
+      <wsdl:input message="tns:ClearDBHttpPostIn" />
+      <wsdl:output message="tns:ClearDBHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <wsdl:input message="tns:UploadHttpPostIn" />
+      <wsdl:output message="tns:UploadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <wsdl:input message="tns:DownloadHttpPostIn" />
+      <wsdl:output message="tns:DownloadHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <wsdl:input message="tns:GetFilesHttpPostIn" />
+      <wsdl:output message="tns:GetFilesHttpPostOut" />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <wsdl:input message="tns:DeleteFileHttpPostIn" />
+      <wsdl:output message="tns:DeleteFileHttpPostOut" />
+    </wsdl:operation>
+  </wsdl:portType>
+  <wsdl:binding name="WebService1Soap" type="tns:WebService1Soap">
+    <soap:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerifyUsers">
+      <soap:operation soapAction="http://tempuri.org/VerifyUsers" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <soap:operation soapAction="http://tempuri.org/InsertUser" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UNavailable">
+      <soap:operation soapAction="http://tempuri.org/UNavailable" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsByParticipant">
+      <soap:operation soapAction="http://tempuri.org/GetGroupsByParticipant" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParticipantsOfGroup">
+      <soap:operation soapAction="http://tempuri.org/GetParticipantsOfGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <soap:operation soapAction="http://tempuri.org/getContacts" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <soap:operation soapAction="http://tempuri.org/addContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <soap:operation soapAction="http://tempuri.org/DeleteContact" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <soap:operation soapAction="http://tempuri.org/createGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap:operation soapAction="http://tempuri.org/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToGroup">
+      <soap:operation soapAction="http://tempuri.org/AddToGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <soap:operation soapAction="http://tempuri.org/getProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap:operation soapAction="http://tempuri.org/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <soap:operation soapAction="http://tempuri.org/LeaveGroup" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAgain">
+      <soap:operation soapAction="http://tempuri.org/SendAgain" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCode">
+      <soap:operation soapAction="http://tempuri.org/CheckCode" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap:operation soapAction="http://tempuri.org/GetMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <soap:operation soapAction="http://tempuri.org/GetAllMessages" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessegesStatus">
+      <soap:operation soapAction="http://tempuri.org/ChangeMessegesStatus" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessegesForChat">
+      <soap:operation soapAction="http://tempuri.org/GetMessegesForChat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIPAddress">
+      <soap:operation soapAction="http://tempuri.org/SetIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPAddress">
+      <soap:operation soapAction="http://tempuri.org/DeleteIPAddress" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <soap:operation soapAction="http://tempuri.org/GetIP" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitation">
+      <soap:operation soapAction="http://tempuri.org/SendInvitation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RespondToInvitation">
+      <soap:operation soapAction="http://tempuri.org/RespondToInvitation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitation">
+      <soap:operation soapAction="http://tempuri.org/GetInvitation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvitationStat">
+      <soap:operation soapAction="http://tempuri.org/ChangeInvitationStat" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvitation">
+      <soap:operation soapAction="http://tempuri.org/DeleteInvitation" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDB">
+      <soap:operation soapAction="http://tempuri.org/ClearDB" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <soap:operation soapAction="http://tempuri.org/Upload" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <soap:operation soapAction="http://tempuri.org/Download" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <soap:operation soapAction="http://tempuri.org/GetFiles" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap:operation soapAction="http://tempuri.org/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1Soap12" type="tns:WebService1Soap">
+    <soap12:binding transport="http://schemas.xmlsoap.org/soap/http" />
+    <wsdl:operation name="VerifyUsers">
+      <soap12:operation soapAction="http://tempuri.org/VerifyUsers" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <soap12:operation soapAction="http://tempuri.org/InsertUser" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UNavailable">
+      <soap12:operation soapAction="http://tempuri.org/UNavailable" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <soap12:operation soapAction="http://tempuri.org/ChangePassword" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsByParticipant">
+      <soap12:operation soapAction="http://tempuri.org/GetGroupsByParticipant" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParticipantsOfGroup">
+      <soap12:operation soapAction="http://tempuri.org/GetParticipantsOfGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <soap12:operation soapAction="http://tempuri.org/getContacts" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <soap12:operation soapAction="http://tempuri.org/addContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <soap12:operation soapAction="http://tempuri.org/DeleteContact" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <soap12:operation soapAction="http://tempuri.org/createGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <soap12:operation soapAction="http://tempuri.org/DeleteGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToGroup">
+      <soap12:operation soapAction="http://tempuri.org/AddToGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <soap12:operation soapAction="http://tempuri.org/getProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <soap12:operation soapAction="http://tempuri.org/UpdateProfile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <soap12:operation soapAction="http://tempuri.org/LeaveGroup" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <soap12:operation soapAction="http://tempuri.org/Register" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAgain">
+      <soap12:operation soapAction="http://tempuri.org/SendAgain" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCode">
+      <soap12:operation soapAction="http://tempuri.org/CheckCode" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <soap12:operation soapAction="http://tempuri.org/SendMessage" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <soap12:operation soapAction="http://tempuri.org/GetMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <soap12:operation soapAction="http://tempuri.org/GetAllMessages" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessegesStatus">
+      <soap12:operation soapAction="http://tempuri.org/ChangeMessegesStatus" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessegesForChat">
+      <soap12:operation soapAction="http://tempuri.org/GetMessegesForChat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIPAddress">
+      <soap12:operation soapAction="http://tempuri.org/SetIPAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPAddress">
+      <soap12:operation soapAction="http://tempuri.org/DeleteIPAddress" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <soap12:operation soapAction="http://tempuri.org/GetIP" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitation">
+      <soap12:operation soapAction="http://tempuri.org/SendInvitation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RespondToInvitation">
+      <soap12:operation soapAction="http://tempuri.org/RespondToInvitation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitation">
+      <soap12:operation soapAction="http://tempuri.org/GetInvitation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvitationStat">
+      <soap12:operation soapAction="http://tempuri.org/ChangeInvitationStat" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvitation">
+      <soap12:operation soapAction="http://tempuri.org/DeleteInvitation" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ClearDB">
+      <soap12:operation soapAction="http://tempuri.org/ClearDB" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <soap12:operation soapAction="http://tempuri.org/Upload" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <soap12:operation soapAction="http://tempuri.org/Download" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <soap12:operation soapAction="http://tempuri.org/GetFiles" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <soap12:operation soapAction="http://tempuri.org/DeleteFile" style="document" />
+      <wsdl:input>
+        <soap12:body use="literal" />
+      </wsdl:input>
+      <wsdl:output>
+        <soap12:body use="literal" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1HttpGet" type="tns:WebService1HttpGet">
+    <http:binding verb="GET" />
+    <wsdl:operation name="VerifyUsers">
+      <http:operation location="/VerifyUsers" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <http:operation location="/InsertUser" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UNavailable">
+      <http:operation location="/UNavailable" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsByParticipant">
+      <http:operation location="/GetGroupsByParticipant" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParticipantsOfGroup">
+      <http:operation location="/GetParticipantsOfGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <http:operation location="/getContacts" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <http:operation location="/addContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <http:operation location="/DeleteContact" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <http:operation location="/createGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <http:operation location="/DeleteGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToGroup">
+      <http:operation location="/AddToGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <http:operation location="/getProfile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <http:operation location="/UpdateProfile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <http:operation location="/LeaveGroup" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <http:operation location="/Register" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAgain">
+      <http:operation location="/SendAgain" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCode">
+      <http:operation location="/CheckCode" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <http:operation location="/GetMessages" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <http:operation location="/GetAllMessages" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessegesStatus">
+      <http:operation location="/ChangeMessegesStatus" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessegesForChat">
+      <http:operation location="/GetMessegesForChat" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIPAddress">
+      <http:operation location="/SetIPAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPAddress">
+      <http:operation location="/DeleteIPAddress" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <http:operation location="/GetIP" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitation">
+      <http:operation location="/SendInvitation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RespondToInvitation">
+      <http:operation location="/RespondToInvitation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitation">
+      <http:operation location="/GetInvitation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvitationStat">
+      <http:operation location="/ChangeInvitationStat" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvitation">
+      <http:operation location="/DeleteInvitation" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDB">
+      <http:operation location="/ClearDB" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <http:operation location="/Upload" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <http:operation location="/Download" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <http:operation location="/GetFiles" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <http:operation location="/DeleteFile" />
+      <wsdl:input>
+        <http:urlEncoded />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:binding name="WebService1HttpPost" type="tns:WebService1HttpPost">
+    <http:binding verb="POST" />
+    <wsdl:operation name="VerifyUsers">
+      <http:operation location="/VerifyUsers" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="InsertUser">
+      <http:operation location="/InsertUser" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UNavailable">
+      <http:operation location="/UNavailable" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangePassword">
+      <http:operation location="/ChangePassword" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetGroupsByParticipant">
+      <http:operation location="/GetGroupsByParticipant" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetParticipantsOfGroup">
+      <http:operation location="/GetParticipantsOfGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getContacts">
+      <http:operation location="/getContacts" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="addContact">
+      <http:operation location="/addContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteContact">
+      <http:operation location="/DeleteContact" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="createGroup">
+      <http:operation location="/createGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteGroup">
+      <http:operation location="/DeleteGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="AddToGroup">
+      <http:operation location="/AddToGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="getProfile">
+      <http:operation location="/getProfile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="UpdateProfile">
+      <http:operation location="/UpdateProfile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="LeaveGroup">
+      <http:operation location="/LeaveGroup" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Register">
+      <http:operation location="/Register" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendAgain">
+      <http:operation location="/SendAgain" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="CheckCode">
+      <http:operation location="/CheckCode" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendMessage">
+      <http:operation location="/SendMessage" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetMessages">
+      <http:operation location="/GetMessages" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetAllMessages">
+      <http:operation location="/GetAllMessages" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeMessegesStatus">
+      <http:operation location="/ChangeMessegesStatus" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="GetMessegesForChat">
+      <http:operation location="/GetMessegesForChat" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SetIPAddress">
+      <http:operation location="/SetIPAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteIPAddress">
+      <http:operation location="/DeleteIPAddress" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetIP">
+      <http:operation location="/GetIP" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="SendInvitation">
+      <http:operation location="/SendInvitation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="RespondToInvitation">
+      <http:operation location="/RespondToInvitation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetInvitation">
+      <http:operation location="/GetInvitation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="ChangeInvitationStat">
+      <http:operation location="/ChangeInvitationStat" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="DeleteInvitation">
+      <http:operation location="/DeleteInvitation" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="ClearDB">
+      <http:operation location="/ClearDB" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output />
+    </wsdl:operation>
+    <wsdl:operation name="Upload">
+      <http:operation location="/Upload" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="Download">
+      <http:operation location="/Download" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="GetFiles">
+      <http:operation location="/GetFiles" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+    <wsdl:operation name="DeleteFile">
+      <http:operation location="/DeleteFile" />
+      <wsdl:input>
+        <mime:content type="application/x-www-form-urlencoded" />
+      </wsdl:input>
+      <wsdl:output>
+        <mime:mimeXml part="Body" />
+      </wsdl:output>
+    </wsdl:operation>
+  </wsdl:binding>
+  <wsdl:service name="WebService1">
+    <wsdl:port name="WebService1Soap" binding="tns:WebService1Soap">
+      <soap:address location="http://54.68.48.87/Webservice1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1Soap12" binding="tns:WebService1Soap12">
+      <soap12:address location="http://54.68.48.87/Webservice1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1HttpGet" binding="tns:WebService1HttpGet">
+      <http:address location="http://54.68.48.87/Webservice1.asmx" />
+    </wsdl:port>
+    <wsdl:port name="WebService1HttpPost" binding="tns:WebService1HttpPost">
+      <http:address location="http://54.68.48.87/Webservice1.asmx" />
+    </wsdl:port>
+  </wsdl:service>
+</wsdl:definitions>

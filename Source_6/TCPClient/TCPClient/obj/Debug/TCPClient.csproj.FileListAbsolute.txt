@@ -1,0 +1,4 @@
+C:\Users\karam\Desktop\Source_6\TCPClient\TCPClient\bin\Debug\TCPClient.dll
+C:\Users\karam\Desktop\Source_6\TCPClient\TCPClient\bin\Debug\TCPClient.pdb
+C:\Users\karam\Desktop\Source_6\TCPClient\TCPClient\obj\Debug\TCPClient.dll
+C:\Users\karam\Desktop\Source_6\TCPClient\TCPClient\obj\Debug\TCPClient.pdb
